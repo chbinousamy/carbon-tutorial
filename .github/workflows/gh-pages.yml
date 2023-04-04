@@ -1,0 +1,49 @@
+# Nom de notre workflow
+name: "Build and Commit web pages"
+
+# Événements sur lesquels il doit être déclenché
+on:
+  workflow_dispatch:
+      
+  push:         # <- Déclenché lorsque l'on pousse du code...
+   branches:
+     - esna-www  # <- ... mais seulement sur cette branche
+
+jobs:
+
+  # Notre job
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    # Tâches à effectuer, comme expliquées ci-dessus
+    steps:
+
+      # 1. On récupère le contenu du dépôt
+      - name: "Checkout"
+        uses: actions/checkout@v3
+        with:
+          ref: esna-www
+          persist-credentials: false
+  
+      - name: "Set up Node"
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/gallium
+
+      - name: "yarn setup"
+        run: |
+          yarn install
+          yarn
+      - name: "yarn build"
+        run: yarn build
+
+      - name: "yarn test"
+        run: yarn test
+
+      # 3. Déploiement sur les Github Pages
+      - name: "Deploy to Pages"
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FOLDER: build/  # <- Dossier contenant notre documentation générée
+          BRANCH: gh-pages     # <- Branche sur laquelle seront commités les fichiers

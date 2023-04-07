@@ -27,11 +27,11 @@ const TutorialHeader = () => (
           isActive={isSideNavExpanded}
         />
         <HeaderName element={Link} to="/" prefix="ESNA">
-          Design
+          Web
         </HeaderName>
         <HeaderNavigation aria-label="Label">
           <HeaderMenuItem element={Link} to="/repos">
-            Repositories
+            IBM Carbon
           </HeaderMenuItem>
           <HeaderMenuItem element={Link} to="/github">
             Github

@@ -7,7 +7,6 @@ import {
   Pagination,
   Grid,
   Column,
-  Theme,
 } from '@carbon/react';
 
 const octokitClient = new Octokit({});

@@ -19,19 +19,25 @@ import { Link } from 'react-router-dom';
 const TutorialHeader = () => (
   <HeaderContainer
     render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-      <Header aria-label="Carbon Tutorial">
+      <Header aria-label="Label">
         <SkipToContent />
         <HeaderMenuButton
           aria-label="Open menu"
           onClick={onClickSideNavExpand}
           isActive={isSideNavExpanded}
         />
-        <HeaderName element={Link} to="/" prefix="IBM">
-          Carbon Tutorial
+        <HeaderName element={Link} to="/" prefix="ESNA">
+          Design
         </HeaderName>
-        <HeaderNavigation aria-label="Carbon Tutorial">
+        <HeaderNavigation aria-label="Label">
           <HeaderMenuItem element={Link} to="/repos">
             Repositories
+          </HeaderMenuItem>
+          <HeaderMenuItem element={Link} to="/github">
+            Github
+          </HeaderMenuItem>
+          <HeaderMenuItem element={Link} to="/gitlab">
+            Gitlab
           </HeaderMenuItem>
         </HeaderNavigation>
         <SideNav
@@ -42,6 +48,12 @@ const TutorialHeader = () => (
             <HeaderSideNavItems>
               <HeaderMenuItem element={Link} to="/repos">
                 Repositories
+              </HeaderMenuItem>
+              <HeaderMenuItem element={Link} to="/github">
+                Github
+              </HeaderMenuItem>
+              <HeaderMenuItem element={Link} to="/gitlab">
+                Gitlab
               </HeaderMenuItem>
             </HeaderSideNavItems>
           </SideNavItems>

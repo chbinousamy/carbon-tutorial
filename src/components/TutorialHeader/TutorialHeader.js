@@ -33,14 +33,14 @@ const TutorialHeader = () => (
           <HeaderMenuItem element={Link} to="/repos">
             IBM Carbon
           </HeaderMenuItem>
+          <HeaderMenuItem element={Link} to="/homebrew">
+            Homebrew
+          </HeaderMenuItem>
           <HeaderMenuItem element={Link} to="/github">
             Github
           </HeaderMenuItem>
           <HeaderMenuItem element={Link} to="/gitlab">
             Gitlab
-          </HeaderMenuItem>
-          <HeaderMenuItem element={Link} to="/homebrew">
-            Homebrew
           </HeaderMenuItem>
         </HeaderNavigation>
         <SideNav
@@ -50,16 +50,16 @@ const TutorialHeader = () => (
           <SideNavItems>
             <HeaderSideNavItems>
               <HeaderMenuItem element={Link} to="/repos">
-                Repositories
+                IBM Carbon
+              </HeaderMenuItem>
+              <HeaderMenuItem element={Link} to="/homebrew">
+                Homebrew
               </HeaderMenuItem>
               <HeaderMenuItem element={Link} to="/github">
                 Github
               </HeaderMenuItem>
               <HeaderMenuItem element={Link} to="/gitlab">
                 Gitlab
-              </HeaderMenuItem>
-              <HeaderMenuItem element={Link} to="/homebrew">
-                Homebrew
               </HeaderMenuItem>
             </HeaderSideNavItems>
           </SideNavItems>

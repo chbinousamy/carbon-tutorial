@@ -18,10 +18,10 @@ class App extends Component {
           <Content>
             <Switch>
               <Route exact path="/" component={LandingPage} />
+              <Route path="/homebrew" component={HomebrewPage} />
               <Route path="/repos" component={RepoPage} />
               <Route path="/github" component={GithubPage} />
               <Route path="/gitlab" component={GitlabPage} />
-              <Route path="/homebrew" component={HomebrewPage} />
             </Switch>
           </Content>
         </Theme>

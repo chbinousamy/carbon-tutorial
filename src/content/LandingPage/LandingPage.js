@@ -17,6 +17,95 @@ const LandingPage = () => {
       </Column>
       <Column lg={16} md={8} sm={4} className="repo-page__r1">
         <Accordion align="start" disabled={false}>
+          <AccordionItem title="Homebrew Repository" open>
+            <p>
+              <Link href="#/homebrew">Link</Link>
+            </p>
+            <p>
+              Homebrew is a popular package manager for macOS, which allows
+              users to easily install and manage software packages on their Mac
+              computers. It is similar to package managers like apt-get on Linux
+              or pip for Python, but it is specifically designed for macOS.
+            </p>
+            <p>
+              Homebrew provides a command-line interface that allows users to
+              install, upgrade, and uninstall software packages from a vast
+              collection of open-source software directly from the command line.
+              It automates the process of downloading, compiling, and installing
+              software, making it easier for macOS users to install and manage a
+              wide range of software applications, libraries, and tools.
+            </p>
+            <p>
+              Homebrew is known for its flexibility, extensibility, and
+              community-driven nature. It is maintained by a large community of
+              developers and users who contribute to the available packages and
+              keep them up-to-date. Homebrew allows users to install software
+              that may not be available in the official macOS App Store or
+              provided by Apple, making it a popular choice for developers and
+              power users who require specific tools or software versions for
+              their workflows.
+            </p>
+          </AccordionItem>
+          <AccordionItem title="Github Repository" open>
+            <p>
+              <Link href="#/github">Link</Link>
+            </p>
+            <p>
+              A GitHub repository, often simply referred to as a "repo," is a
+              location where code and other files related to a particular
+              project are stored and managed using Git, a popular version
+              control system. GitHub is a web-based hosting service for Git
+              repositories, providing a platform for developers to collaborate
+              on projects, track changes, and share their code with others.
+            </p>
+            <p>
+              A GitHub repository typically contains the following components:
+              <UnorderedList nested>
+                <ListItem>
+                  Source code: This is the main content of the repository,
+                  including the actual code files written in various programming
+                  languages.
+                </ListItem>
+                <ListItem>
+                  README file: This is a documentation file that provides
+                  information about the project, its purpose, how to set it up,
+                  and how to use it. It serves as a quick reference for other
+                  developers who may want to contribute to or use the project.
+                </ListItem>
+                License file: This is a file that specifies the terms under
+                which others can use, modify, and distribute the code in the
+                repository. It clarifies the legal rights and restrictions
+                associated with using the code.
+                <ListItem>
+                  Issue tracker: This is a tool provided by GitHub that allows
+                  project stakeholders to create, manage, and discuss issues
+                  related to the project, such as bug reports, feature requests,
+                  and general discussions.
+                </ListItem>
+                <ListItem>
+                  Branches and commits: Git allows developers to create branches
+                  to work on different features or bug fixes independently and
+                  merge them back into the main branch (often called the
+                  "master" or "main" branch) when ready. Commits represent
+                  individual changes made to the code, and they are used to
+                  track the history of changes in the repository.
+                </ListItem>
+                <ListItem>
+                  Collaborators: GitHub allows project owners to invite
+                  collaborators who can access, contribute to, and manage the
+                  repository. Collaborators can make changes, create branches,
+                  submit changes for review, and perform other actions based on
+                  their permissions.
+                </ListItem>
+              </UnorderedList>
+            </p>
+            <p>
+              GitHub repositories are widely used by individual developers, open
+              source projects, and organizations for managing and sharing code,
+              collaborating on projects, and promoting code reuse and community
+              involvement.
+            </p>
+          </AccordionItem>
           <AccordionItem title="Carbon Repository" open>
             <p>
               <Link href="#/repos">Link</Link>
@@ -83,66 +172,6 @@ const LandingPage = () => {
               maintained and updated by IBM and the open-source community,
               allowing for contributions and improvements from a wide range of
               users.
-            </p>
-          </AccordionItem>
-          <AccordionItem title="Github Repository" open>
-            <p>
-              <Link href="#/github">Link</Link>
-            </p>
-            <p>
-              A GitHub repository, often simply referred to as a "repo," is a
-              location where code and other files related to a particular
-              project are stored and managed using Git, a popular version
-              control system. GitHub is a web-based hosting service for Git
-              repositories, providing a platform for developers to collaborate
-              on projects, track changes, and share their code with others.
-            </p>
-            <p>
-              A GitHub repository typically contains the following components:
-              <UnorderedList nested>
-                <ListItem>
-                  Source code: This is the main content of the repository,
-                  including the actual code files written in various programming
-                  languages.
-                </ListItem>
-                <ListItem>
-                  README file: This is a documentation file that provides
-                  information about the project, its purpose, how to set it up,
-                  and how to use it. It serves as a quick reference for other
-                  developers who may want to contribute to or use the project.
-                </ListItem>
-                License file: This is a file that specifies the terms under
-                which others can use, modify, and distribute the code in the
-                repository. It clarifies the legal rights and restrictions
-                associated with using the code.
-                <ListItem>
-                  Issue tracker: This is a tool provided by GitHub that allows
-                  project stakeholders to create, manage, and discuss issues
-                  related to the project, such as bug reports, feature requests,
-                  and general discussions.
-                </ListItem>
-                <ListItem>
-                  Branches and commits: Git allows developers to create branches
-                  to work on different features or bug fixes independently and
-                  merge them back into the main branch (often called the
-                  "master" or "main" branch) when ready. Commits represent
-                  individual changes made to the code, and they are used to
-                  track the history of changes in the repository.
-                </ListItem>
-                <ListItem>
-                  Collaborators: GitHub allows project owners to invite
-                  collaborators who can access, contribute to, and manage the
-                  repository. Collaborators can make changes, create branches,
-                  submit changes for review, and perform other actions based on
-                  their permissions.
-                </ListItem>
-              </UnorderedList>
-            </p>
-            <p>
-              GitHub repositories are widely used by individual developers, open
-              source projects, and organizations for managing and sharing code,
-              collaborating on projects, and promoting code reuse and community
-              involvement.
             </p>
           </AccordionItem>
           <AccordionItem title="Gitlab Repository" open>
@@ -218,35 +247,6 @@ const LandingPage = () => {
               features such as integrated project management, container
               registry, and more, making it a comprehensive platform for modern
               software development.
-            </p>
-          </AccordionItem>
-          <AccordionItem title="Homebrew Repository" open>
-            <p>
-              <Link href="#/homebrew">Link</Link>
-            </p>
-            <p>
-              Homebrew is a popular package manager for macOS, which allows
-              users to easily install and manage software packages on their Mac
-              computers. It is similar to package managers like apt-get on Linux
-              or pip for Python, but it is specifically designed for macOS.
-            </p>
-            <p>
-              Homebrew provides a command-line interface that allows users to
-              install, upgrade, and uninstall software packages from a vast
-              collection of open-source software directly from the command line.
-              It automates the process of downloading, compiling, and installing
-              software, making it easier for macOS users to install and manage a
-              wide range of software applications, libraries, and tools.
-            </p>
-            <p>
-              Homebrew is known for its flexibility, extensibility, and
-              community-driven nature. It is maintained by a large community of
-              developers and users who contribute to the available packages and
-              keep them up-to-date. Homebrew allows users to install software
-              that may not be available in the official macOS App Store or
-              provided by Apple, making it a popular choice for developers and
-              power users who require specific tools or software versions for
-              their workflows.
             </p>
           </AccordionItem>
           <AccordionItem title="Docker Repository" open>

@@ -28,6 +28,7 @@ const getRowItems = rows =>
     ...row,
     key: row.id,
     version: row.versions.stable,
+    license: row.license,
     links: (
       <LinkList
         url={
@@ -47,6 +48,10 @@ const headers = [
   {
     key: 'version',
     header: 'Version',
+  },
+  {
+    key: 'license',
+    header: 'License',
   },
   {
     key: 'links',

@@ -29,8 +29,7 @@ const getRowItems = rows =>
   rows.map(row => ({
     ...row,
     key: row.id,
-    stars: row.stargazers_count,
-    issueCount: row.open_issues_count,
+    license: row.license?.name,
     createdAt: new Date(row.created_at).toLocaleDateString(),
     updatedAt: new Date(row.updated_at).toLocaleDateString(),
     links: <LinkList url={row.html_url} homepageUrl={row.homepage} />,
@@ -50,12 +49,8 @@ const headers = [
     header: 'Updated',
   },
   {
-    key: 'issueCount',
-    header: 'Open Issues',
-  },
-  {
-    key: 'stars',
-    header: 'Stars',
+    key: 'license',
+    header: 'License',
   },
   {
     key: 'links',
@@ -74,7 +69,7 @@ const GithubPage = () => {
       const res = await octokitClient.request('GET /users/{username}/repos', {
         username: 'chbinousamy',
         per_page: 100,
-        sort: 'updated',
+        sort: 'name',
         direction: 'desc',
       });
 

@@ -1,15 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import GitlabTable from './GitlabTable';
-import { DataTableSkeleton, Pagination, Grid, Column } from '@carbon/react';
+import {
+  Link,
+  DataTableSkeleton,
+  Pagination,
+  Grid,
+  Column,
+} from '@carbon/react';
+
+const LinkList = ({ url, homepageUrl }) => (
+  <ul style={{ display: 'flex' }}>
+    <li>
+      <Link href={url}>GitLab</Link>
+    </li>
+  </ul>
+);
 
 const getRowItems = rows =>
   rows.map(row => ({
     ...row,
     key: row.id,
-    stars: row.star_count,
-    issueCount: row.open_issues_count,
     createdAt: new Date(row.created_at).toLocaleDateString(),
     updatedAt: new Date(row.last_activity_at).toLocaleDateString(),
+    links: <LinkList url={row.web_url} />,
   }));
 
 const headers = [
@@ -26,8 +39,8 @@ const headers = [
     header: 'Updated',
   },
   {
-    key: 'stars',
-    header: 'Stars',
+    key: 'links',
+    header: 'Links',
   },
 ];
 

@@ -79,6 +79,7 @@ const RepoPage = () => {
       });
 
       if (res.status === 200) {
+        console.log(res.data);
         setRows(getRowItems(res.data));
       } else {
         setError('Error obtaining repository data');

@@ -1,26 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import GitlabTable from './GitlabTable';
-import {
-  Link,
-  DataTableSkeleton,
-  Pagination,
-  Grid,
-  Column,
-} from '@carbon/react';
-
-const LinkList = ({ url, homepageUrl }) => (
-  <ul style={{ display: 'flex' }}>
-    <li>
-      <Link href={url}>GitLab</Link>
-    </li>
-    {homepageUrl && (
-      <li>
-        <span>&nbsp;|&nbsp;</span>
-        <Link href={homepageUrl}>Homepage</Link>
-      </li>
-    )}
-  </ul>
-);
+import { DataTableSkeleton, Pagination, Grid, Column } from '@carbon/react';
 
 const getRowItems = rows =>
   rows.map(row => ({
@@ -64,7 +44,7 @@ const GitlabPage = () => {
       );
       const jsonData = await response.json();
       if (response.status === 200) {
-        //console.log(jsonData);
+        console.log(jsonData);
         setRows(getRowItems(jsonData));
       } else {
         //console.log('Error obtaining repository data');

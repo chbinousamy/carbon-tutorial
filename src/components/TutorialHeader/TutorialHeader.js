@@ -27,7 +27,7 @@ const TutorialHeader = () => (
           isActive={isSideNavExpanded}
         />
         <HeaderName element={Link} to="/" prefix="ESNA">
-          [Web]
+          [WIP]
         </HeaderName>
         <HeaderNavigation aria-label="Label">
           <HeaderMenuItem element={Link} to="/repos">
@@ -38,6 +38,9 @@ const TutorialHeader = () => (
           </HeaderMenuItem>
           <HeaderMenuItem element={Link} to="/gitlab">
             Gitlab
+          </HeaderMenuItem>
+          <HeaderMenuItem element={Link} to="/homebrew">
+            Homebrew
           </HeaderMenuItem>
         </HeaderNavigation>
         <SideNav
@@ -54,6 +57,9 @@ const TutorialHeader = () => (
               </HeaderMenuItem>
               <HeaderMenuItem element={Link} to="/gitlab">
                 Gitlab
+              </HeaderMenuItem>
+              <HeaderMenuItem element={Link} to="/homebrew">
+                Homebrew
               </HeaderMenuItem>
             </HeaderSideNavItems>
           </SideNavItems>

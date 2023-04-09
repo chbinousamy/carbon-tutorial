@@ -7,6 +7,7 @@ import LandingPage from './content/LandingPage';
 import RepoPage from './content/RepoPage';
 import GithubPage from './content/GithubPage';
 import GitlabPage from './content/GitlabPage';
+import HomebrewPage from './content/HomebrewPage';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
               <Route path="/repos" component={RepoPage} />
               <Route path="/github" component={GithubPage} />
               <Route path="/gitlab" component={GitlabPage} />
+              <Route path="/homebrew" component={HomebrewPage} />
             </Switch>
           </Content>
         </Theme>

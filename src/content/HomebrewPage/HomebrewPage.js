@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Octokit } from '@octokit/core';
-import GithubTable from './GithubTable';
+import HomebrewTable from './HomebrewTable';
 import {
-  Link,
   DataTableSkeleton,
   Pagination,
   Grid,
   Column,
+  Link,
+  Search,
 } from '@carbon/react';
-
-const octokitClient = new Octokit({});
 
 const LinkList = ({ url, homepageUrl }) => (
   <ul style={{ display: 'flex' }}>
     <li>
-      <Link href={url}>GitHub</Link>
+      <Link href={url}>Github</Link>
     </li>
     {homepageUrl && (
       <li>
@@ -29,11 +27,16 @@ const getRowItems = rows =>
   rows.map(row => ({
     ...row,
     key: row.id,
-    stars: row.stargazers_count,
-    issueCount: row.open_issues_count,
-    createdAt: new Date(row.created_at).toLocaleDateString(),
-    updatedAt: new Date(row.updated_at).toLocaleDateString(),
-    links: <LinkList url={row.html_url} homepageUrl={row.homepage} />,
+    version: row.versions.stable,
+    links: (
+      <LinkList
+        url={
+          'https://github.com/Homebrew/homebrew-core/blob/HEAD/' +
+          row.ruby_source_path
+        }
+        homepageUrl={row.homepage}
+      />
+    ),
   }));
 
 const headers = [
@@ -42,20 +45,8 @@ const headers = [
     header: 'Name',
   },
   {
-    key: 'createdAt',
-    header: 'Created',
-  },
-  {
-    key: 'updatedAt',
-    header: 'Updated',
-  },
-  {
-    key: 'issueCount',
-    header: 'Open Issues',
-  },
-  {
-    key: 'stars',
-    header: 'Stars',
+    key: 'version',
+    header: 'Version',
   },
   {
     key: 'links',
@@ -63,35 +54,37 @@ const headers = [
   },
 ];
 
-const GithubPage = () => {
+var indexed;
+
+const HomebrewPage = () => {
+  const [searchInput, setSearchInput] = useState('');
   const [firstRowIndex, setFirstRowIndex] = useState(0);
   const [currentPageSize, setCurrentPageSize] = useState(10);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
   const [rows, setRows] = useState([]);
-  useEffect(() => {
-    async function getGithubRepos() {
-      const res = await octokitClient.request('GET /users/{username}/repos', {
-        username: 'chbinousamy',
-        per_page: 100,
-        sort: 'updated',
-        direction: 'desc',
-      });
 
-      if (res.status === 200) {
-        //console.log(res.data);
-        setRows(getRowItems(res.data));
+  useEffect(() => {
+    async function getHomebrewRepos() {
+      const response = await fetch('https://formulae.brew.sh/api/formula.json');
+      const jsonData = await response.json();
+      if (response.status === 200) {
+        indexed = jsonData.map((item, id) => Object.assign(item, { id }));
+        //console.log(indexed);
+        setRows(getRowItems(indexed));
       } else {
+        //console.log('Error obtaining repository data');
         setError('Error obtaining repository data');
       }
       setLoading(false);
     }
-    getGithubRepos();
+    getHomebrewRepos();
   }, []);
+
   if (loading) {
     return (
-      <Grid className="github-page">
-        <Column lg={16} md={8} sm={4} className="github-page__r1">
+      <Grid className="homebrew-page">
+        <Column lg={16} md={8} sm={4} className="homebrew-page__r1">
           <DataTableSkeleton
             columnCount={headers.length + 1}
             rowCount={10}
@@ -104,10 +97,33 @@ const GithubPage = () => {
   if (error) {
     return `Error! ${error}`;
   }
+
+  const handleChange = e => {
+    console.log('Value from event:', e.target.value);
+    setSearchInput(e.target.value);
+    console.log('Value from searchInput:', searchInput);
+    setRows(
+      getRowItems(
+        indexed.filter(row =>
+          row.name.toLowerCase().includes(e.target.value.toLowerCase())
+        )
+      )
+    );
+  };
+
   return (
-    <Grid className="github-page">
-      <Column lg={16} md={8} sm={4} className="github-page__r1">
-        <GithubTable
+    <Grid className="homebrew-page">
+      <Column lg={16} md={8} sm={4} className="homebrew-page__r1">
+        <Search
+          size="sm"
+          type="text"
+          placeholder="Filter library name"
+          //onChange={handleChange}
+          onChange={handleChange}
+        />
+      </Column>
+      <Column lg={16} md={8} sm={4} className="homebrew-page__r1">
+        <HomebrewTable
           headers={headers}
           rows={rows.slice(firstRowIndex, firstRowIndex + currentPageSize)}
         />
@@ -130,4 +146,4 @@ const GithubPage = () => {
   );
 };
 
-export default GithubPage;
+export default HomebrewPage;

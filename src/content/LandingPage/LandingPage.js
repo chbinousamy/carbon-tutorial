@@ -222,6 +222,9 @@ const LandingPage = () => {
           </AccordionItem>
           <AccordionItem title="Homebrew Repository" open>
             <p>
+              <Link href="#/homebrew">Link</Link>
+            </p>
+            <p>
               Homebrew is a popular package manager for macOS, which allows
               users to easily install and manage software packages on their Mac
               computers. It is similar to package managers like apt-get on Linux

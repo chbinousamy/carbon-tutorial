@@ -111,15 +111,21 @@ const HomebrewPage = () => {
     );
   };
 
+  const handleClear = () => {
+    setRows(getRowItems(indexed));
+  };
+
   return (
     <Grid className="homebrew-page">
       <Column lg={16} md={8} sm={4} className="homebrew-page__r1">
         <Search
           size="sm"
+          playgroundWidth={50}
           type="text"
           placeholder="Filter library name"
-          //onChange={handleChange}
           onChange={handleChange}
+          closeButtonLabelText="Clear search input"
+          onClear={handleClear}
         />
       </Column>
       <Column lg={16} md={8} sm={4} className="homebrew-page__r1">

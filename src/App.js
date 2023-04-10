@@ -17,11 +17,11 @@ class App extends Component {
           <TutorialHeader />
           <Content>
             <Routes>
-              <Route exact path="/" element={<LandingPage/>} />
-              <Route path="/homebrew" element={<HomebrewPage/>} />
-              <Route path="/repos" element={<RepoPage/>} />
-              <Route path="/github" element={<GithubPage/>} />
-              <Route path="/gitlab" element={<GitlabPage/>} />
+              <Route exact path="/" element={<LandingPage />} />
+              <Route path="/homebrew" element={<HomebrewPage />} />
+              <Route path="/repos" element={<RepoPage />} />
+              <Route path="/github" element={<GithubPage />} />
+              <Route path="/gitlab" element={<GitlabPage />} />
             </Routes>
           </Content>
         </Theme>

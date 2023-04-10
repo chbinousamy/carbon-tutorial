@@ -3,15 +3,14 @@ import { render, screen } from '@testing-library/react';
 import RepoPage from './content/RepoPage';
 import GithubPage from './content/GithubPage';
 
-
 test('renders the landing page', () => {
   render(<RepoPage />);
-  expect(screen.getByRole("table")).toHaveTextContent(/Created/);
+  expect(screen.getByRole('table')).toHaveTextContent(/Created/);
 });
 
 test('renders the github page', () => {
   render(<GithubPage />);
-  expect(screen.getByRole("table")).toHaveTextContent(/Created/);
+  expect(screen.getByRole('table')).toHaveTextContent(/Created/);
 });
 
 /*

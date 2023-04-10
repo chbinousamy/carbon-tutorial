@@ -14,7 +14,7 @@ import {
 } from '@carbon/react';
 
 const HomebrewTable = ({ rows, headers }) => {
-  const getRowDescription = rowId => {
+  const getRowDescription = (rowId) => {
     const row = rows.find(({ id }) => id === rowId);
     return row ? row.desc : '';
   };
@@ -31,12 +31,13 @@ const HomebrewTable = ({ rows, headers }) => {
       }) => (
         <TableContainer
           title="Homebrew Repositories"
-          description="A collection of public Homebrew repositories.">
+          description="A collection of public Homebrew repositories."
+        >
           <Table {...getTableProps()}>
             <TableHead>
               <TableRow>
                 <TableExpandHeader />
-                {headers.map(header => (
+                {headers.map((header) => (
                   <TableHeader {...getHeaderProps({ header })}>
                     {header.header}
                   </TableHeader>
@@ -44,10 +45,10 @@ const HomebrewTable = ({ rows, headers }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map(row => (
+              {rows.map((row) => (
                 <React.Fragment key={row.id}>
                   <TableExpandRow {...getRowProps({ row })}>
-                    {row.cells.map(cell => (
+                    {row.cells.map((cell) => (
                       <TableCell key={cell.id}>{cell.value}</TableCell>
                     ))}
                   </TableExpandRow>

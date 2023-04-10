@@ -23,8 +23,8 @@ const LinkList = ({ url, homepageUrl }) => (
   </ul>
 );
 
-const getRowItems = rows =>
-  rows.map(row => ({
+const getRowItems = (rows) =>
+  rows.map((row) => ({
     ...row,
     key: row.id,
     version: row.versions.stable,
@@ -103,13 +103,13 @@ const HomebrewPage = () => {
     return `Error! ${error}`;
   }
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     console.log('Value from event:', e.target.value);
     setSearchInput(e.target.value);
     console.log('Value from searchInput:', searchInput);
     setRows(
       getRowItems(
-        indexed.filter(row =>
+        indexed.filter((row) =>
           row.name.toLowerCase().includes(e.target.value.toLowerCase())
         )
       )

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './app.scss';
 import { Content, Theme } from '@carbon/react';
 import TutorialHeader from './components/TutorialHeader';
-import { Route, Switch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import LandingPage from './content/LandingPage';
 import RepoPage from './content/RepoPage';
 import GithubPage from './content/GithubPage';
@@ -16,13 +16,13 @@ class App extends Component {
         <Theme theme="g100">
           <TutorialHeader />
           <Content>
-            <Switch>
-              <Route exact path="/" component={LandingPage} />
-              <Route path="/homebrew" component={HomebrewPage} />
-              <Route path="/repos" component={RepoPage} />
-              <Route path="/github" component={GithubPage} />
-              <Route path="/gitlab" component={GitlabPage} />
-            </Switch>
+            <Routes>
+              <Route exact path="/" element={<LandingPage/>} />
+              <Route path="/homebrew" element={<HomebrewPage/>} />
+              <Route path="/repos" element={<RepoPage/>} />
+              <Route path="/github" element={<GithubPage/>} />
+              <Route path="/gitlab" element={<GitlabPage/>} />
+            </Routes>
           </Content>
         </Theme>
       </>

@@ -25,8 +25,8 @@ const LinkList = ({ url, homepageUrl }) => (
   </ul>
 );
 
-const getRowItems = rows =>
-  rows.map(row => ({
+const getRowItems = (rows) =>
+  rows.map((row) => ({
     ...row,
     key: row.id,
     license: row.license?.name,

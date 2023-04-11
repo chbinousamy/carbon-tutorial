@@ -104,9 +104,9 @@ const HomebrewPage = () => {
   }
 
   const handleChange = (e) => {
-    console.log('Value from event:', e.target.value);
+    //console.log('Value from event:', e.target.value);
     setSearchInput(e.target.value);
-    console.log('Value from searchInput:', searchInput);
+    //console.log('Value from searchInput:', searchInput);
     setRows(
       getRowItems(
         indexed.filter((row) =>

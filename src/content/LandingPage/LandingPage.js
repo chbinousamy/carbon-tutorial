@@ -17,6 +17,74 @@ const LandingPage = () => {
       </Column>
       <Column lg={16} md={8} sm={4} className="repo-page__r1">
         <Accordion align="start" disabled={false}>
+          <AccordionItem title="Carbon Repository" open>
+            <p>
+              <Link href="#/repos">Link</Link>
+            </p>
+            <p>
+              Carbon Design System is an open-source design system developed and
+              maintained by IBM. It provides a set of guidelines, principles,
+              and resources for designing consistent and accessible user
+              interfaces (UI) and user experiences (UX) for web and mobile
+              applications. Carbon Design System is primarily focused on
+              creating modern, enterprise-grade applications with a consistent
+              look and feel, while also prioritizing accessibility and
+              inclusivity.
+            </p>
+            <p>
+              Carbon Design System includes a comprehensive set of components,
+              patterns, and design assets that can be used by designers and
+              developers to create visually appealing and user-friendly
+              applications. Some key features of Carbon Design System include:
+              <UnorderedList nested>
+                <ListItem>
+                  Carbon Components: A library of reusable UI components, such
+                  as buttons, forms, modals, and icons, that can be used to
+                  build consistent and responsive user interfaces. These
+                  components are designed to be flexible and customizable,
+                  making it easy to create unique and branded interfaces while
+                  maintaining consistency.
+                </ListItem>
+                <ListItem>
+                  Design guidelines: Detailed guidelines and principles for
+                  designing visually appealing and effective user interfaces.
+                  This includes guidance on typography, color palettes, spacing,
+                  layout, and interactions, which helps ensure a consistent look
+                  and feel across different parts of an application.
+                </ListItem>
+                <ListItem>
+                  Accessibility: Accessibility is a core principle of Carbon
+                  Design System, and it provides guidance and tools for
+                  designing accessible user interfaces that can be used by
+                  people with disabilities. This includes recommendations for
+                  designing for keyboard navigation, providing proper semantic
+                  markup, and using accessible colors and contrast ratios.
+                </ListItem>
+                <ListItem>
+                  Design assets: Carbon Design System provides a set of design
+                  assets, including Sketch and Figma libraries, that can be used
+                  by designers to create high-fidelity mockups and prototypes.
+                  These assets include pre-designed UI components, templates,
+                  and icons that can be easily used in design projects.
+                </ListItem>
+                <ListItem>
+                  Documentation and resources: Carbon Design System includes
+                  comprehensive documentation, tutorials, and other resources
+                  that provide guidance on how to use the design system
+                  effectively. This includes documentation on design principles,
+                  coding guidelines, and best practices for creating accessible
+                  and inclusive user interfaces.
+                </ListItem>
+              </UnorderedList>
+              Carbon Design System is widely used by designers and developers in
+              the IBM ecosystem and beyond to create consistent, accessible, and
+              modern user interfaces for web and mobile applications. It is an
+              open-source project, available on GitHub, and is actively
+              maintained and updated by IBM and the open-source community,
+              allowing for contributions and improvements from a wide range of
+              users.
+            </p>
+          </AccordionItem>
           <AccordionItem title="Homebrew Repository" open>
             <p>
               <Link href="#/homebrew">Link</Link>
@@ -104,74 +172,6 @@ const LandingPage = () => {
               source projects, and organizations for managing and sharing code,
               collaborating on projects, and promoting code reuse and community
               involvement.
-            </p>
-          </AccordionItem>
-          <AccordionItem title="Carbon Repository" open>
-            <p>
-              <Link href="#/repos">Link</Link>
-            </p>
-            <p>
-              Carbon Design System is an open-source design system developed and
-              maintained by IBM. It provides a set of guidelines, principles,
-              and resources for designing consistent and accessible user
-              interfaces (UI) and user experiences (UX) for web and mobile
-              applications. Carbon Design System is primarily focused on
-              creating modern, enterprise-grade applications with a consistent
-              look and feel, while also prioritizing accessibility and
-              inclusivity.
-            </p>
-            <p>
-              Carbon Design System includes a comprehensive set of components,
-              patterns, and design assets that can be used by designers and
-              developers to create visually appealing and user-friendly
-              applications. Some key features of Carbon Design System include:
-              <UnorderedList nested>
-                <ListItem>
-                  Carbon Components: A library of reusable UI components, such
-                  as buttons, forms, modals, and icons, that can be used to
-                  build consistent and responsive user interfaces. These
-                  components are designed to be flexible and customizable,
-                  making it easy to create unique and branded interfaces while
-                  maintaining consistency.
-                </ListItem>
-                <ListItem>
-                  Design guidelines: Detailed guidelines and principles for
-                  designing visually appealing and effective user interfaces.
-                  This includes guidance on typography, color palettes, spacing,
-                  layout, and interactions, which helps ensure a consistent look
-                  and feel across different parts of an application.
-                </ListItem>
-                <ListItem>
-                  Accessibility: Accessibility is a core principle of Carbon
-                  Design System, and it provides guidance and tools for
-                  designing accessible user interfaces that can be used by
-                  people with disabilities. This includes recommendations for
-                  designing for keyboard navigation, providing proper semantic
-                  markup, and using accessible colors and contrast ratios.
-                </ListItem>
-                <ListItem>
-                  Design assets: Carbon Design System provides a set of design
-                  assets, including Sketch and Figma libraries, that can be used
-                  by designers to create high-fidelity mockups and prototypes.
-                  These assets include pre-designed UI components, templates,
-                  and icons that can be easily used in design projects.
-                </ListItem>
-                <ListItem>
-                  Documentation and resources: Carbon Design System includes
-                  comprehensive documentation, tutorials, and other resources
-                  that provide guidance on how to use the design system
-                  effectively. This includes documentation on design principles,
-                  coding guidelines, and best practices for creating accessible
-                  and inclusive user interfaces.
-                </ListItem>
-              </UnorderedList>
-              Carbon Design System is widely used by designers and developers in
-              the IBM ecosystem and beyond to create consistent, accessible, and
-              modern user interfaces for web and mobile applications. It is an
-              open-source project, available on GitHub, and is actively
-              maintained and updated by IBM and the open-source community,
-              allowing for contributions and improvements from a wide range of
-              users.
             </p>
           </AccordionItem>
           <AccordionItem title="Gitlab Repository" open>

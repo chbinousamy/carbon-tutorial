@@ -27,7 +27,7 @@ const TutorialHeader = () => (
           isActive={isSideNavExpanded}
         />
         <HeaderName element={Link} to="/" prefix="ESNA">
-          [WIP]
+          [PWA]
         </HeaderName>
         <HeaderNavigation aria-label="Label">
           <HeaderMenuItem element={Link} to="/repos">

@@ -13,7 +13,7 @@ const LandingPage = () => {
   return (
     <Grid className="repo-page">
       <Column lg={16} md={8} sm={4} className="landing-page__banner">
-        <h1 className="landing-page__heading">--- Work In Progress ---</h1>
+        <h1 className="landing-page__heading">-- Work In Progress --</h1>
       </Column>
       <Column lg={16} md={8} sm={4} className="repo-page__r1">
         <Accordion align="start" disabled={false}>

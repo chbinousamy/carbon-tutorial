@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: 16
       - run: npm install -g @lhci/cli
+      - uses: actions/checkout@v3
       - run: |
           echo "LHCI_BUILD_CONTEXT__CURRENT_HASH=$(git log -1 --pretty=format:\"%H\" gh-pages)" >> $GITHUB_ENV
           echo LHCI_BUILD_CONTEXT__CURRENT_HASH=$LHCI_BUILD_CONTEXT__CURRENT_HASH

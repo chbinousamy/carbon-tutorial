@@ -16,4 +16,4 @@ jobs:
       - run: lhci collect --url=https://www.esna.cloud --collect.numberOfRuns=5
       - run: lhci upload --target=temporary-public-storage
         env:
-          LHCI_GITHUB_TOKEN: ${{ secrets.LHCI_GITHUB_TOKEN }}
+          LHCI_GITHUB_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

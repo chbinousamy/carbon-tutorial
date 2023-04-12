@@ -12,10 +12,7 @@ jobs:
         with:
           node-version: 16
       - run: npm install -g @lhci/cli
-      - run: |
-          LHCI_BUILD_CONTEXT__CURRENT_HASH=$(node -p "new Date().getTime().toString(16).split('').reverse().join('')")
-          echo $LHCI_BUILD_CONTEXT__CURRENT_HASH
-          export LHCI_BUILD_CONTEXT__CURRENT_HASH
+      - run: echo "LHCI_BUILD_CONTEXT__CURRENT_HASH=$(node -p "new Date().getTime().toString(16).split('').reverse().join('')")" >> $GITHUB_ENV
       - run: lhci collect --url=https://www.esna.cloud --collect.numberOfRuns=2
       - run: lhci upload --target=temporary-public-storage
         env:

@@ -8,7 +8,6 @@ on:
 
 env:
   URL: https://www.esna.cloud
-  DEPLOY_BRANCH: origin/gh-pages
 
 jobs:
   lighthouseci:
@@ -19,9 +18,11 @@ jobs:
           node-version: 16
       - run: npm install -g @lhci/cli
       - uses: actions/checkout@v3
+        with:
+          ref: gh-pages
       - run: |
           git branch
-          echo "LHCI_BUILD_CONTEXT__CURRENT_HASH=$(git log -1 --format:'%H' --first-parent $DEPLOY_BRANCH)" >> $GITHUB_ENV
+          echo "LHCI_BUILD_CONTEXT__CURRENT_HASH=$(git log -1 --format:'%H')" >> $GITHUB_ENV
           echo LHCI_BUILD_CONTEXT__CURRENT_HASH=$LHCI_BUILD_CONTEXT__CURRENT_HASH
       - run: lhci collect --url=$URL --collect.numberOfRuns=5
       - run: lhci upload --target=temporary-public-storage

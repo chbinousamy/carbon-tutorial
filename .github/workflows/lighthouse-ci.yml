@@ -1,4 +1,4 @@
-name: CI
+name: Lighthouse CI
 on:
   workflow_run:
     workflows: [pages build and deployment]

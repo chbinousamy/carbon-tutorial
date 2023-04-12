@@ -20,7 +20,7 @@ jobs:
       - run: npm install -g @lhci/cli
       - uses: actions/checkout@v3
       - run: |
-          echo "LHCI_BUILD_CONTEXT__CURRENT_HASH=$(git log -1 --pretty=format:\"%H\" $DEPLOY_BRANCH)" >> $GITHUB_ENV
+          echo "LHCI_BUILD_CONTEXT__CURRENT_HASH=$(git log -1 --format:'%H' $DEPLOY_BRANCH)" >> $GITHUB_ENV
           echo LHCI_BUILD_CONTEXT__CURRENT_HASH=$LHCI_BUILD_CONTEXT__CURRENT_HASH
       - run: lhci collect --url=$URL --collect.numberOfRuns=5
       - run: lhci upload --target=temporary-public-storage

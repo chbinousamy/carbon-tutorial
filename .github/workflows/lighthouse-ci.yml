@@ -8,18 +8,8 @@ jobs:
   lighthouseci:
     runs-on: ubuntu-latest
     steps:
-#      - name: Wait for deployment to succeed
-#        uses: lewagon/wait-on-check-action@v1.3.1
-#        with:
-#          ref: ${{ github.ref }}
-#          check-name: 'pages-build-deployment'
-#          repo-token: ${{ secrets.GITHUB_TOKEN }}
-#          wait-interval: 10
-      - uses: actions/checkout@v3
-        with:
-          ref: gh-pages
       - uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: npm install -g @lhci/cli
-      - run: lhci autorun --collect.numberOfRuns=10 --upload.target=temporary-public-storage
+      - run: lhci autorun --collect.numberOfRuns=5

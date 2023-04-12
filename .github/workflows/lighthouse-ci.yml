@@ -13,3 +13,5 @@ jobs:
           node-version: 16
       - run: npm install -g @lhci/cli
       - run: lhci autorun --collect.numberOfRuns=5
+        env:
+          LHCI_GITHUB_TOKEN: ${{ secrets.LHCI_GITHUB_TOKEN }}

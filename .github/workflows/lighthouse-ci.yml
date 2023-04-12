@@ -5,6 +5,11 @@ on:
     workflows: [pages-build-deployment]
     types:
       - completed
+
+env:
+  URL: https://www.esna.cloud
+  DEPLOY_BRANCH: origin/gh-pages
+
 jobs:
   lighthouseci:
     runs-on: ubuntu-latest
@@ -15,9 +20,9 @@ jobs:
       - run: npm install -g @lhci/cli
       - uses: actions/checkout@v3
       - run: |
-          echo "LHCI_BUILD_CONTEXT__CURRENT_HASH=$(git log -1 --pretty=format:\"%H\" gh-pages)" >> $GITHUB_ENV
+          echo "LHCI_BUILD_CONTEXT__CURRENT_HASH=$(git log -1 --pretty=format:\"%H\" $DEPLOY_BRANCH)" >> $GITHUB_ENV
           echo LHCI_BUILD_CONTEXT__CURRENT_HASH=$LHCI_BUILD_CONTEXT__CURRENT_HASH
-      - run: lhci collect --url=https://www.esna.cloud --collect.numberOfRuns=5
+      - run: lhci collect --url=$URL --collect.numberOfRuns=5
       - run: lhci upload --target=temporary-public-storage
         env:
           LHCI_GITHUB_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

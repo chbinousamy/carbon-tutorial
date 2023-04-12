@@ -1,5 +1,6 @@
 name: Lighthouse CI
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: [pages-build-deployment]
     types:

@@ -25,7 +25,20 @@
     "react-dom": "18.2.0",
     "react-router-dom": "6.10.0",
     "react-scripts": "5.0.1",
-    "sass": "1.61.0"
+    "sass": "1.61.0",
+    "web-vitals": "^2.1.4",
+    "workbox-background-sync": "^6.5.4",
+    "workbox-broadcast-update": "^6.5.4",
+    "workbox-cacheable-response": "^6.5.4",
+    "workbox-core": "^6.5.4",
+    "workbox-expiration": "^6.5.4",
+    "workbox-google-analytics": "^6.5.4",
+    "workbox-navigation-preload": "^6.5.4",
+    "workbox-precaching": "^6.5.4",
+    "workbox-range-requests": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4",
+    "workbox-streams": "^6.5.4"
   },
   "devDependencies": {
     "@commitlint/cli": "17.5.1",
@@ -35,7 +48,8 @@
     "husky": "8.0.3",
     "lint-staged": "13.2.1",
     "prettier": "2.8.7",
-    "wait-for-expect": "3.0.2"
+    "wait-for-expect": "3.0.2",
+    "workbox-webpack-plugin": "^6.5.4"
   },
   "eslintConfig": {
     "extends": "react-app"

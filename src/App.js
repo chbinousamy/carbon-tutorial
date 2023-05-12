@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <Theme theme="g100">
+        <Theme theme="white">
           <TutorialHeader />
           <Content>
             <Routes>

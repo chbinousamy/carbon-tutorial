@@ -26,8 +26,8 @@ const TutorialHeader = () => (
           onClick={onClickSideNavExpand}
           isActive={isSideNavExpanded}
         />
-        <HeaderName element={Link} to="/" prefix="ESNA">
-          [PWA]
+        <HeaderName element={Link} to="/" prefix="C#B">
+          [WPA]
         </HeaderName>
         <HeaderNavigation aria-label="Label">
           <HeaderMenuItem element={Link} to="/repos">

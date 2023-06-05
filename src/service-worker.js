@@ -88,6 +88,7 @@ navigationPreload.enable();
 // cache strategy for navigation requests with its own cache. This route will be
 // handled by navigation preload. The NetworkOnly strategy will work as well.
 const navigationRoute = new NavigationRoute(new NetworkFirst({
+  networkTimeoutSeconds: 2,
   cacheName: 'navigations'
 }));
 

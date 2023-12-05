@@ -78,7 +78,7 @@ const HomebrewPage = () => {
         //console.log(indexed);
         setRows(getRowItems(indexed));
       } else {
-        //console.log('Error obtaining repository data');
+        //comment console.log('Error obtaining repository data');
         setError('Error obtaining repository data');
       }
       setLoading(false);
